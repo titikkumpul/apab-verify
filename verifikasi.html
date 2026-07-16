@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verifikasi Sertifikat APAB NTT</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f8fc;
+margin:0;
+}
+
+header{
+background:#0066cc;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:600px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+input{
+width:100%;
+padding:12px;
+font-size:18px;
+margin-top:10px;
+}
+
+button{
+margin-top:15px;
+padding:12px 20px;
+background:#0066cc;
+color:white;
+border:none;
+cursor:pointer;
+font-size:16px;
+width:100%;
+}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#e8ffe8;
+border-left:5px solid green;
+display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>VERIFIKASI SERTIFIKAT</h2>
+</header>
+
+<div class="container">
+
+<h3>Masukkan Nomor Sertifikat</h3>
+
+<input
+type="text"
+id="nomor"
+placeholder="Contoh : 003/SERT/APAB/NTT/2026">
+
+<button onclick="cek()">VERIFIKASI</button>
+
+<div id="hasil" class="result"></div>
+
+</div>
+
+<script>
+
+function cek(){
+
+let nomor=document.getElementById("nomor").value;
+
+if(nomor=="003/SERT/APAB/NTT/2026"){
+
+document.getElementById("hasil").style.display="block";
+
+document.getElementById("hasil").innerHTML=
+"<h3>✅ SERTIFIKAT VALID</h3>"+
+"<b>Nama :</b> CATUR PUPUS.A.<br>"+
+"<b>Jabatan :</b> Wakil Ketua<br>"+
+"<b>Tanggal :</b> 12 Februari 2026<br>"+
+"<b>Status :</b> Terdaftar di APAB NTT";
+
+}else{
+
+document.getElementById("hasil").style.display="block";
+
+document.getElementById("hasil").style.background="#ffe8e8";
+
+document.getElementById("hasil").style.borderLeft="5px solid red";
+
+document.getElementById("hasil").innerHTML=
+"<h3>❌ Nomor Sertifikat Tidak Ditemukan</h3>";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
