@@ -79,59 +79,7 @@ placeholder="Contoh : 003/SERT/APAB/NTT/2026">
 
 <script>
 
-<script>
-function tampilkanData(nomor){
-
-    let hasil=document.getElementById("hasil");
-
-    if(nomor==="003/SERT/APAB/NTT/2026"){
-
-        hasil.style.display="block";
-        hasil.style.background="#e8ffe8";
-        hasil.style.borderLeft="5px solid green";
-
-        hasil.innerHTML=`
-        <h3>✅ SERTIFIKAT VALID</h3>
-        <p><b>Nomor:</b> 003/SERT/APAB/NTT/2026</p>
-        <p><b>Nama:</b> CATUR PUPUS.A.</p>
-        <p><b>Jabatan:</b> Wakil Sekretaris</p>
-        <p><b>Periode:</b> 2025-2026</p>
-        <p><b>Status:</b> Sertifikat Resmi APAB NTT</p>
-        `;
-    }else{
-
-        hasil.style.display="block";
-        hasil.style.background="#ffe8e8";
-        hasil.style.borderLeft="5px solid red";
-
-        hasil.innerHTML="<h3>❌ Sertifikat Tidak Ditemukan</h3>";
-    }
-}
-
 function cek(){
-
-    let nomor=document.getElementById("nomor").value.trim();
-
-    tampilkanData(nomor);
-
-}
-
-window.onload=function(){
-
-    const url=new URLSearchParams(window.location.search);
-
-    const id=url.get("id");
-
-    if(id){
-
-        document.getElementById("nomor").value=id;
-
-        tampilkanData(id);
-
-    }
-
-}
-</script>
 
 let nomor=document.getElementById("nomor").value;
 
