@@ -128,8 +128,7 @@ loading{
 
 <h3>Masukkan Nomor Sertifikat</h3>
 
-<input
-type="text"
+<input type="text"
 id="nomor"
 placeholder="Contoh : 003/SERT/APAB/NTT/2026">
 
@@ -149,33 +148,46 @@ placeholder="Contoh : 003/SERT/APAB/NTT/2026">
 
 function cek(){
 
-let nomor=document.getElementById("nomor").value;
+    let nomor = document.getElementById("nomor").value;
 
-if(nomor=="003/SERT/APAB/NTT/2026"){
+    // Tampilkan loading
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("hasil").style.display = "none";
 
-document.getElementById("hasil").style.display="block";
+    // Tunggu 2 detik
+    setTimeout(function(){
 
-document.getElementById("hasil").innerHTML=
-"<h3>✅ SERTIFIKAT VALID</h3>"+
-"<b>Nama :</b> CATUR PUPUS.AGILLISA, S.Pd.<br>"+
-"<b>Jabatan :</b> Wakil Sekretaris<br>"+
-"<b>Periode :</b> 2025-2026<br>"+
-"<b>Status :</b> Terdaftar di APAB NTT";
+        // Sembunyikan loading
+        document.getElementById("loading").style.display = "none";
 
-}else{
+        document.getElementById("hasil").style.display = "block";
 
-document.getElementById("hasil").style.display="block";
+        if(nomor=="003/SERT/APAB/NTT/2026"){
 
-document.getElementById("hasil").style.background="#ffe8e8";
+            document.getElementById("hasil").style.background="#e8ffe8";
+            document.getElementById("hasil").style.borderLeft="5px solid green";
 
-document.getElementById("hasil").style.borderLeft="5px solid red";
+            document.getElementById("hasil").innerHTML=
+            "<h3>✅ SERTIFIKAT VALID</h3>"+
+            "<b>Nama :</b> CATUR PUPUS.AGILLISA, S.Pd.<br>"+
+            "<b>Jabatan :</b> Wakil Sekretaris<br>"+
+            "<b>Periode :</b> 2025-2026<br>"+
+            "<b>Status :</b> Terdaftar di APAB NTT";
 
-document.getElementById("hasil").innerHTML=
-"<h3>❌ Nomor Sertifikat Tidak Ditemukan</h3>";
+        }else{
+
+            document.getElementById("hasil").style.background="#ffe8e8";
+            document.getElementById("hasil").style.borderLeft="5px solid red";
+
+            document.getElementById("hasil").innerHTML=
+            "<h3>❌ Nomor Sertifikat Tidak Ditemukan</h3>";
+
+        }
+
+    },2000);
 
 }
 
-}
 
 </script>
 
